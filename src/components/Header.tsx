@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -26,13 +26,22 @@ const Header: React.FC = () => {
             if (!isHomePage) {
                 navigate('/');
                 setTimeout(() => {
-                    const element = document.getElementById(to);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    scroller.scrollTo(to, {
+                        duration: 800,
+                        delay: 0,
+                        smooth: 'easeInOutQuart',
+                        offset: -80,
+                    });
                 }, 100);
+            } else {
+                // Manually trigger scroll for mobile menu usage or when Link isn't used
+                scroller.scrollTo(to, {
+                    duration: 800,
+                    delay: 0,
+                    smooth: 'easeInOutQuart',
+                    offset: -80,
+                });
             }
-            // If on home page, ScrollLink handles it natively (or we can handle manully, but <Link> is easier)
         }
     };
 
@@ -60,6 +69,7 @@ const Header: React.FC = () => {
                                         key={item.name}
                                         to={item.to}
                                         smooth={true}
+                                        duration={800}
                                         className="text-gray-600 hover:text-brand-blue cursor-pointer font-medium transition-colors"
                                         offset={-80}
                                     >
