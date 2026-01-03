@@ -9,12 +9,12 @@ const Footer: React.FC = () => {
 
                     {/* Brand Info */}
                     <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="relative h-16 w-16 overflow-hidden flex items-center justify-center">
                                 <img
-                                    src="https://instagram.fsub8-1.fna.fbcdn.net/v/t51.2885-19/450813695_873320847972935_1083183847106525733_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDI0LmMyIn0&_nc_ht=instagram.fsub8-1.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2QEsn1iaAqO7Ys6wxbs5FzINDR9dhRBsvyFSB5tsk-AGCen2cFE1w2c0ORdkqTyJ_RM&_nc_ohc=wBr8YKJ2jE4Q7kNvwEAmCXf&_nc_gid=zaIn6D4Dvo77Xp5ZMbNPHg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfnD2FlThd9KBVQK0R56t35j3E7rF1zy-LAPBupMOvm4lA&oe=695930AD&_nc_sid=8b3546"
+                                    src="/assets/HARIS - Logo.png"
                                     alt="HARIS"
-                                    className="w-full h-full object-cover"
+                                    className="absolute h-40 w-40 max-w-none object-contain"
                                 />
                             </div>
                             <span className="font-bold text-xl tracking-wider">HARIS</span>

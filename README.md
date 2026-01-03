@@ -40,5 +40,6 @@ The output will be in the `dist/` folder.
 
 ## 🎨 Asset Notes
 
-- The project uses the real phone number: `0857 3024 9491`.
-- The logo is pulled from the official Instagram profile picture.
+- **Logo**: The specific Instagram logo is saved in `public/assets/logo.jpg`.
+- **Hero Image**: A placeholder is used in `public/assets/hero.jpg`.
+    - **To Change Images**: Simply replace the files in `public/assets/` with your own images (keep the same filenames or update the code).

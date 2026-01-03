@@ -16,18 +16,15 @@ const Header: React.FC = () => {
         <nav className="sticky top-0 w-full bg-white/95 backdrop-blur-sm z-40 border-b border-gray-100 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
-                    <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-                        {/* Logo Placeholder - Using Real Profile Pic */}
-                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-blue">
+                    <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+                        {/* CSS Crop for Padded Logo: Container h-20, Image h-56 centered */}
+                        <div className="relative h-20 w-64 overflow-hidden flex items-center">
                             <img
-                                src="https://instagram.fsub8-1.fna.fbcdn.net/v/t51.2885-19/450813695_873320847972935_1083183847106525733_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDI0LmMyIn0&_nc_ht=instagram.fsub8-1.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2QEsn1iaAqO7Ys6wxbs5FzINDR9dhRBsvyFSB5tsk-AGCen2cFE1w2c0ORdkqTyJ_RM&_nc_ohc=wBr8YKJ2jE4Q7kNvwEAmCXf&_nc_gid=zaIn6D4Dvo77Xp5ZMbNPHg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfnD2FlThd9KBVQK0R56t35j3E7rF1zy-LAPBupMOvm4lA&oe=695930AD&_nc_sid=8b3546"
-                                alt="HARIS"
-                                className="w-full h-full object-cover"
+                                src="/assets/HARIS - Long Logo.png"
+                                alt="HARIS - Harapan Istana Cleaning Service"
+                                className="absolute h-56 w-auto max-w-none object-contain"
+                                style={{ top: '50%', transform: 'translateY(-50%)', left: '-10%' }}
                             />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="font-bold text-xl text-gray-900 leading-none">HARIS</span>
-                            <span className="text-xs text-brand-blue font-medium tracking-wider">HARAPAN ISTANA</span>
                         </div>
                     </div>
 

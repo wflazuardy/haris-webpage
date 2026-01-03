@@ -14,14 +14,14 @@ const Hero: React.FC = () => {
                         transition={{ duration: 0.6 }}
                         className="z-10"
                     >
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-green/10 text-brand-green font-semibold text-sm mb-6">
-                            <CheckCircle size={16} className="mr-2" />
-                            Jasa Cleaning Service No.1 di Surabaya
+                        <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-green/10 text-brand-green font-semibold text-xs sm:text-sm mb-4 sm:mb-6">
+                            <CheckCircle size={14} className="mr-1.5 sm:mr-2 flex-shrink-0" />
+                            <span className="whitespace-nowrap">Jasa Cleaning Service No.1 di Surabaya</span>
                         </div>
-                        <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                             Deep Cleaning Profesional <span className="text-brand-blue">Bersih Maksimal,</span> Harga Bersahabat.
                         </h1>
-                        <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                        <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-lg">
                             Rumah bersih, sehat, dan nyaman dengan tenaga ahli tersertifikasi. Melayani pembersihan rumah, apartemen, hingga taman di seluruh Surabaya.
                         </p>
 
@@ -30,23 +30,23 @@ const Hero: React.FC = () => {
                                 href="https://wa.me/6285730249491?text=Halo%20Haris,%20saya%20ingin%20tanya%20layanan%20cleaning%20service."
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-brand-green hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/40"
+                                className="flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold rounded-xl text-white bg-brand-green hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/40"
                             >
                                 Konsultasi Gratis
-                                <ArrowRight className="ml-2" size={20} />
+                                <ArrowRight className="ml-2" size={18} />
                             </a>
                             <a
                                 href="#services"
-                                className="flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-brand-blue hover:text-brand-blue transition-all"
+                                className="flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-brand-blue hover:text-brand-blue transition-all"
                             >
                                 Lihat Layanan
                             </a>
                         </div>
 
-                        <div className="mt-10 flex items-center gap-6 text-sm text-gray-500 font-medium">
-                            <div className="flex -space-x-3">
+                        <div className="mt-6 sm:mt-10 flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 font-medium">
+                            <div className="flex -space-x-2 sm:-space-x-3">
                                 {[1, 2, 3, 4].map(i => (
-                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden">
+                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden">
                                         <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
                                     </div>
                                 ))}
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
                             {/* Hero Image Placeholder - Using a clean interior shot */}
                             <div className="aspect-[4/3] bg-gray-200 w-full relative group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1581578731117-104f2a41272c?q=80&w=2070&auto=format&fit=crop"
+                                    src="/assets/hero.jpg"
                                     alt="Cleaning Service Harapan Istana"
                                     className="w-full h-full object-cover"
                                 />
@@ -86,8 +86,8 @@ const Hero: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Decorative background blob */}
-                        <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-blue/5 rounded-full blur-3xl"></div>
+                        {/* Decorative background blob - softened glow effect */}
+                        <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-brand-blue/[0.02] rounded-full blur-2xl"></div>
                     </motion.div>
 
                 </div>
