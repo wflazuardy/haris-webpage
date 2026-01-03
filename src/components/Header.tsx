@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                         {/* CSS Crop for Padded Logo: Container h-20, Image h-56 centered */}
                         <div className="relative h-20 w-64 overflow-hidden flex items-center">
                             <img
-                                src="/assets/HARIS - Long Logo.png"
+                                src={`${import.meta.env.BASE_URL}assets/HARIS - Long Logo.png`}
                                 alt="HARIS - Harapan Istana Cleaning Service"
                                 className="absolute h-56 w-auto max-w-none object-contain"
                                 style={{ top: '50%', transform: 'translateY(-50%)', left: '-10%' }}

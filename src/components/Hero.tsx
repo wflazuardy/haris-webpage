@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => {
     return (
@@ -44,15 +44,14 @@ const Hero: React.FC = () => {
                         </div>
 
                         <div className="mt-6 sm:mt-10 flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 font-medium">
-                            <div className="flex -space-x-2 sm:-space-x-3">
-                                {[1, 2, 3, 4].map(i => (
-                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden">
-                                        <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
-                                    </div>
-                                ))}
+                            <div className="flex bg-white/50 backdrop-blur-sm p-3 rounded-xl border border-gray-100 shadow-sm text-brand-blue">
+                                <ShieldCheck size={32} />
                             </div>
                             <div>
-                                <span className="text-brand-blue font-bold">500+</span> Pelanggan Puas
+                                <div className="text-gray-900 font-bold text-base">100% Garansi Kepuasan</div>
+                                <div className="text-gray-500 font-medium">
+                                    Bersih ulang <span className="text-brand-green font-bold">GRATIS</span> jika tidak puas
+                                </div>
                             </div>
                         </div>
                     </motion.div>
@@ -67,7 +66,7 @@ const Hero: React.FC = () => {
                             {/* Hero Image Placeholder - Using a clean interior shot */}
                             <div className="aspect-[4/3] bg-gray-200 w-full relative group">
                                 <img
-                                    src="/assets/hero.jpg"
+                                    src={`${import.meta.env.BASE_URL}assets/hero.jpg`}
                                     alt="Cleaning Service Harapan Istana"
                                     className="w-full h-full object-cover"
                                 />
@@ -77,11 +76,11 @@ const Hero: React.FC = () => {
                             {/* Floating Badge */}
                             <div className="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-4 animate-bounce-slow">
                                 <div className="bg-brand-blue p-3 rounded-full text-white">
-                                    <Star fill="currentColor" size={24} />
+                                    <MapPin fill="currentColor" size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">Rating</p>
-                                    <p className="font-bold text-gray-900 text-lg">4.9/5.0</p>
+                                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">Area Layanan</p>
+                                    <p className="font-bold text-gray-900 text-lg">Surabaya Raya</p>
                                 </div>
                             </div>
                         </div>

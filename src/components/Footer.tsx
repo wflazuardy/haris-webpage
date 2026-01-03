@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative h-16 w-16 overflow-hidden flex items-center justify-center">
                                 <img
-                                    src="/assets/HARIS - Logo.png"
+                                    src={`${import.meta.env.BASE_URL}assets/HARIS - Logo.png`}
                                     alt="HARIS"
                                     className="absolute h-40 w-40 max-w-none object-contain"
                                 />

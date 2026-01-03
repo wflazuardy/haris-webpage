@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Shield, Award, Heart, UserCheck, Smile } from 'lucide-react';
+import { Shield, Award } from 'lucide-react';
 
 const AboutUs: React.FC = () => {
     // Scroll to top when component mounts
