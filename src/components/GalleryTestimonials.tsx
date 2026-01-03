@@ -4,12 +4,10 @@ import { Star, Quote } from 'lucide-react';
 
 const GalleryTestimonials: React.FC = () => {
 
-    // Using placeholder images that look like cleaning scenarios
+    // Using real proof of work images
     const galleryImages = [
-        "https://images.unsplash.com/photo-1527513913470-4e598ccd9698?q=80&w=800&auto=format&fit=crop", // Living room
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", // Bathroom wash
-        "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop", // Kitchen
-        "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800&auto=format&fit=crop"  // Bedroom
+        `${import.meta.env.BASE_URL}assets/bukti_01.jpg`,
+        `${import.meta.env.BASE_URL}assets/bukti_02.jpg`
     ];
 
     const testimonials = [
@@ -44,14 +42,21 @@ const GalleryTestimonials: React.FC = () => {
                         <h3 className="text-3xl font-bold text-gray-900">Bukti Nyata Kebersihan</h3>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {galleryImages.map((img, i) => (
                             <motion.div
                                 key={i}
                                 whileHover={{ scale: 1.02 }}
-                                className="rounded-xl overflow-hidden shadow-md h-48 md:h-64 cursor-pointer"
+                                className="rounded-2xl overflow-hidden shadow-lg aspect-[9/16] md:aspect-[3/4] relative group"
                             >
-                                <img src={img} alt={`Gallery ${i}`} className="w-full h-full object-cover hover:opacity-90 transition-opacity" />
+                                <img
+                                    src={img}
+                                    alt={`Gallery Evidence ${i + 1}`}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <span className="text-white font-bold tracking-wide">Hasil Pekerjaan Terbaik</span>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
