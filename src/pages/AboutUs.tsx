@@ -12,7 +12,7 @@ const AboutUs: React.FC = () => {
             {/* Page Header */}
             <div className="bg-brand-blue text-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Tentang Kami</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">HARIS</h1>
                     <p className="text-xl text-blue-100 italic">"Mewujudkan Kenyamanan Istana di Hunian Anda"</p>
                 </div>
             </div>
@@ -21,7 +21,7 @@ const AboutUs: React.FC = () => {
             <div className="py-16">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-brand-green pl-4">
-                        Profil Bisnis
+                        Siapa Kami?
                     </h2>
                     <div className="prose prose-lg text-gray-600">
                         <p className="mb-4">
