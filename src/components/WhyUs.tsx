@@ -40,9 +40,6 @@ const WhyUs: React.FC = () => {
                         <p className="text-blue-100 text-lg mb-8 leading-relaxed">
                             Kami tidak sekadar membersihkan, tetapi merawat hunian Anda agar lebih sehat dan nyaman. Kebersihan detail adalah standar kami.
                         </p>
-                        <button className="bg-white text-brand-blue px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
-                            Pelajari Lebih Lanjut
-                        </button>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-6">
