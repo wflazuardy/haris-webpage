@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { scroller } from 'react-scroll';
 import { ArrowRight, CheckCircle, ShieldCheck, MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -35,12 +36,19 @@ const Hero: React.FC = () => {
                                 Konsultasi Gratis
                                 <ArrowRight className="ml-2" size={18} />
                             </a>
-                            <a
-                                href="#services"
-                                className="flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-brand-blue hover:text-brand-blue transition-all"
+                            <button
+                                onClick={() => {
+                                    scroller.scrollTo('services', {
+                                        duration: 800,
+                                        delay: 0,
+                                        smooth: 'easeInOutQuart',
+                                        offset: -80,
+                                    });
+                                }}
+                                className="flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer"
                             >
                                 Lihat Layanan
-                            </a>
+                            </button>
                         </div>
 
                         <div className="mt-6 sm:mt-10 flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 font-medium">
