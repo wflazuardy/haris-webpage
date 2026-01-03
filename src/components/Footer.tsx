@@ -1,7 +1,24 @@
-import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleFooterNav = (e: React.MouseEvent, sectionId: string) => {
+        e.preventDefault();
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        } else {
+            const element = document.getElementById(sectionId);
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <footer id="contact" className="bg-gray-900 text-white pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,10 +56,11 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="font-bold text-lg mb-6">Navigasi</h4>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><a href="#hero" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">Layanan Kami</a></li>
-                            <li><a href="#why-us" className="hover:text-white transition-colors">Keunggulan</a></li>
-                            <li><a href="#testimonials" className="hover:text-white transition-colors">Testimoni</a></li>
+                            <li><button onClick={(e) => handleFooterNav(e, 'home')} className="hover:text-white transition-colors text-left">Home</button></li>
+                            <li><button onClick={(e) => handleFooterNav(e, 'services')} className="hover:text-white transition-colors text-left">Layanan Kami</button></li>
+                            <li><button onClick={(e) => handleFooterNav(e, 'why-us')} className="hover:text-white transition-colors text-left">Keunggulan</button></li>
+                            <li><button onClick={(e) => handleFooterNav(e, 'testimonials')} className="hover:text-white transition-colors text-left">Testimoni</button></li>
+                            <li><button onClick={() => { navigate('/tentang-kami'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors text-left">Tentang Kami</button></li>
                         </ul>
                     </div>
 

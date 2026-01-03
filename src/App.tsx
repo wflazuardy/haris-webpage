@@ -1,25 +1,25 @@
-// import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import WhyUs from './components/WhyUs';
-import GalleryTestimonials from './components/GalleryTestimonials';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-900">
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <WhyUs />
-        <GalleryTestimonials />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <Router>
+      <div className="bg-white min-h-screen font-sans text-gray-900">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tentang-kami" element={<AboutUs />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </Router>
   );
 }
 

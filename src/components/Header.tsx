@@ -1,22 +1,46 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isHomePage = location.pathname === '/';
 
     const navItems = [
-        { name: 'Home', to: 'hero' },
-        { name: 'Layanan', to: 'services' },
-        { name: 'Keunggulan', to: 'why-us' },
-        { name: 'Testimoni', to: 'testimonials' },
+        { name: 'Home', to: 'hero', type: 'scroll' },
+        { name: 'Layanan', to: 'services', type: 'scroll' },
+        { name: 'Keunggulan', to: 'why-us', type: 'scroll' },
+        { name: 'Testimoni', to: 'testimonials', type: 'scroll' },
+        { name: 'Tentang Kami', to: '/tentang-kami', type: 'route' },
     ];
+
+    const handleNavigation = (to: string, type: string) => {
+        setIsOpen(false);
+        if (type === 'route') {
+            navigate(to);
+            window.scrollTo(0, 0);
+        } else {
+            if (!isHomePage) {
+                navigate('/');
+                setTimeout(() => {
+                    const element = document.getElementById(to);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+            // If on home page, ScrollLink handles it natively (or we can handle manully, but <Link> is easier)
+        }
+    };
 
     return (
         <nav className="sticky top-0 w-full bg-white/95 backdrop-blur-sm z-40 border-b border-gray-100 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
-                    <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+                    <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => navigate('/')}>
                         {/* CSS Crop for Padded Logo: Container h-20, Image h-56 centered */}
                         <div className="relative h-20 w-64 overflow-hidden flex items-center">
                             <img
@@ -30,15 +54,35 @@ const Header: React.FC = () => {
 
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                to={item.to}
-                                smooth={true}
-                                className="text-gray-600 hover:text-brand-blue cursor-pointer font-medium transition-colors"
-                                offset={-80}
-                            >
-                                {item.name}
-                            </Link>
+                            item.type === 'scroll' ? (
+                                isHomePage ? (
+                                    <ScrollLink
+                                        key={item.name}
+                                        to={item.to}
+                                        smooth={true}
+                                        className="text-gray-600 hover:text-brand-blue cursor-pointer font-medium transition-colors"
+                                        offset={-80}
+                                    >
+                                        {item.name}
+                                    </ScrollLink>
+                                ) : (
+                                    <button
+                                        key={item.name}
+                                        onClick={() => handleNavigation(item.to, item.type)}
+                                        className="text-gray-600 hover:text-brand-blue cursor-pointer font-medium transition-colors"
+                                    >
+                                        {item.name}
+                                    </button>
+                                )
+                            ) : (
+                                <RouterLink
+                                    key={item.name}
+                                    to={item.to}
+                                    className={`font-medium transition-colors ${location.pathname === item.to ? 'text-brand-blue' : 'text-gray-600 hover:text-brand-blue'}`}
+                                >
+                                    {item.name}
+                                </RouterLink>
+                            )
                         ))}
                         <a
                             href="https://wa.me/6285730249491"
@@ -63,19 +107,16 @@ const Header: React.FC = () => {
                 <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-lg">
                     <div className="px-4 pt-2 pb-6 space-y-2">
                         {navItems.map((item) => (
-                            <Link
+                            <button
                                 key={item.name}
-                                to={item.to}
-                                smooth={true}
-                                className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md"
-                                onClick={() => setIsOpen(false)}
-                                offset={-80}
+                                onClick={() => handleNavigation(item.to, item.type)}
+                                className={`block w-full text-left px-3 py-3 text-base font-medium rounded-md ${location.pathname === item.to ? 'text-brand-blue bg-blue-50' : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'}`}
                             >
                                 {item.name}
-                            </Link>
+                            </button>
                         ))}
                         <div className="pt-4 mt-4 border-t border-gray-100">
-                            <a href="#contact" className="block w-full text-center bg-brand-blue text-white px-6 py-3 rounded-lg font-bold">
+                            <a href="https://wa.me/6285730249491" className="block w-full text-center bg-brand-blue text-white px-6 py-3 rounded-lg font-bold">
                                 Pesan Sekarang
                             </a>
                         </div>
