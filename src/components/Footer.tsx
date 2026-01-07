@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Facebook, Instagram, Phone } from 'lucide-react';
+import { Instagram, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
     const navigate = useNavigate();
@@ -39,13 +39,12 @@ const Footer: React.FC = () => {
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             Solusi cleaning service profesional di Surabaya. Kami hadir untuk menciptakan lingkungan yang bersih, sehat, dan nyaman untuk keluarga Anda.
                         </p>
+                        <h5 className="font-bold text-white mb-4">Sosial Media</h5>
                         <div className="flex gap-4">
                             <a href="https://instagram.com/harapanistana" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
-                                <Facebook size={20} />
-                            </a>
+
                             <a href="https://wa.me/6285730249491" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
                                 <Phone size={20} />
                             </a>
