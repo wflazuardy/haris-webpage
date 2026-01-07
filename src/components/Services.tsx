@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Home, Building2, Shovel } from 'lucide-react';
 
-const Services: React.FC = () => {
+const Services: React.FC<{ className?: string }> = ({ className = "" }) => {
+    // ... items ...
     const services = [
         {
             icon: <Home size={40} />,
@@ -31,7 +32,7 @@ const Services: React.FC = () => {
     ];
 
     return (
-        <section id="services" className="py-20 bg-white">
+        <section id="services" className={`py-20 bg-white ${className}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-brand-green font-bold tracking-wider uppercase text-sm mb-3">Layanan Kami</h2>

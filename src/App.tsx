@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Staging from './pages/Staging';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tentang-kami" element={<AboutUs />} />
+            <Route path="/staging" element={<Staging />} />
           </Routes>
         </main>
         <Footer />

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
-const GalleryTestimonials: React.FC = () => {
+const GalleryTestimonials: React.FC<{ className?: string }> = ({ className = "" }) => {
 
     // Using real proof of work images
     const galleryImages = [
@@ -32,7 +32,7 @@ const GalleryTestimonials: React.FC = () => {
     ];
 
     return (
-        <section id="testimonials" className="py-20 bg-gray-50">
+        <section id="testimonials" className={`py-20 bg-gray-50 ${className}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Gallery Section */}

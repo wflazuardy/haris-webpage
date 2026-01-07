@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, DollarSign, PenTool, MapPin } from 'lucide-react';
 
-const WhyUs: React.FC = () => {
+const WhyUs: React.FC<{ className?: string }> = ({ className = "" }) => {
     const features = [
         {
             icon: <Award className="w-12 h-12 text-white" />,
@@ -26,7 +26,7 @@ const WhyUs: React.FC = () => {
     ];
 
     return (
-        <section id="why-us" className="py-20 bg-brand-blue relative overflow-hidden">
+        <section id="why-us" className={`py-20 bg-brand-blue relative overflow-hidden ${className}`}>
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>

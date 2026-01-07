@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { scroller } from 'react-scroll';
 import { ArrowRight, CheckCircle, ShieldCheck, MapPin } from 'lucide-react';
 
-const Hero: React.FC = () => {
+const Hero: React.FC<{ className?: string }> = ({ className = "" }) => {
     return (
-        <section id="hero" className="relative pt-10 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+        <section id="hero" className={`relative pt-10 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-gradient-to-b from-blue-50 to-white ${className}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
