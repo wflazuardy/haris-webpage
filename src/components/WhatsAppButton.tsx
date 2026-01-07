@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const WhatsAppButton: React.FC = () => {
     const phoneNumber = "6285730249491"; // Real number from Instagram
-    const message = encodeURIComponent("Halo Haris, saya ingin tanya layanan cleaning service.");
+    const message = encodeURIComponent("Halo Haris Clean Surabaya, saya ingin menanyakan informasi untuk layanan cleaning service.");
     const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
     return (
